@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mb-4"  *ngFor="let prod of mobileProdData">
+            <div class="card prodCard" [ngClass]="{
+                'noAvl':!prod.isAvailable
+            }">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="prodImg">
+                                <img [src]="prod.image" *ngIf="prod.image; else noImg" [alt]="prod.model" [title]="prod.model">
+                                <ng-template #noImg>
+                                    <img src="https://placehold.co/500x400" alt="">
+                                </ng-template>
+                                <p *ngIf="!prod.isAvailable">Currently Unavailable!!!</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="prodDescription">
+                                <h3>{{prod.brand}} {{prod.model}}</h3>
+                                <h4>({{prod.color}}, {{prod.storage}} )
+                                    <span [ngClass]="{
+                                        'bg-success':prod.rating>=4,
+                                        'bg-warning':prod.rating<4&&prod.rating>=3,
+                                        'bg-danger':prod.rating<3
+
+                                    }">{{prod.rating}}</span>
+                                </h4>
+
+                                <ul>
+                                    <li>{{prod.battery_capacity}}</li>
+                                    <li>{{prod.screen_size}}</li>
+                                    <li>{{prod.processor}}</li>
+                                    <li>{{prod.camera_setup}}</li>
+                                    <li *ngFor="let feat of prod.features">{{feat}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="prodPrice">
+                                <h3>{{prod.price}}</h3>
+                                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png"
+                                    alt="image" title="image">
+                                <p class="mb-0">Free Delivery</p>
+                                <p class="mb-0">Save Extra With Combo Offers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

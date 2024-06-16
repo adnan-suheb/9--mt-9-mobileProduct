@@ -1,0 +1,64 @@
+
+
+.prodImg {
+    position: relative;
+    margin-bottom: 10px;
+    height: 400px;
+}
+.prodImg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prodImg p {
+    font-weight: 700;
+    color: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.prodDescription h4 span {
+    border-radius: 5px;
+    padding: 0 7px;
+    color: #ffff;
+}
+
+.prodPrice img {
+    height: 21px;
+}
+
+.prodPrice p:last-child {
+    color: #26a541;
+    font-weight: 700;
+}
+
+.noAvl{
+    filter: blur(0.5px) grayscale(1);
+}
+
+
+.prodCard{
+    background-color: #1f2833;
+    color: #66fcf1;
+    border-radius: 20px;
+    box-shadow: #66fcf1 0px 7px 29px 0px;
+}
+
+
+@media all and (max-width:800px){
+    .prodPrice{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+}
